@@ -22,6 +22,10 @@ export interface Innovation {
   title: string;
   completedDate: string;
   tags: string[];
+  sprintTitle?: string;
+  subtitle?: string;
+  problem?: string;
+  solution?: string;
 }
 
 export interface CertificateDetail {
@@ -59,6 +63,7 @@ export interface UserData {
   name: string;
   title: string;
   description: string;
+  lumiInfoText: string[];
   quests: Quest[];
   selectedQuestId: string;
   rubric: RubricEntry[];
@@ -70,7 +75,7 @@ const quest1Data: QuestData = {
     {
       id: "augmented-intelligence",
       name: "Augmented Intelligence",
-      score: 2.4,
+      score: 2,
       maxScore: 5,
       subSkills: [
         {
@@ -130,22 +135,9 @@ const quest1Data: QuestData = {
     {
       id: "durable-skills",
       name: "Durable Skills",
-      score: 3.1,
+      score: 3,
       maxScore: 5,
       subSkills: [
-        {
-          id: "communication",
-          name: "Communication",
-          score: 3.2,
-          description:
-            "Effectively conveying ideas, actively listening, and adapting communication style to the audience.",
-          sessionFeedback: {
-            whatWentWell:
-              "Clearly articulated ideas and engaged with team members during discussions.",
-            areasForImprovement:
-              "Practice more concise communication and active listening in group settings.",
-          },
-        },
         {
           id: "critical-thinking",
           name: "Critical Thinking",
@@ -160,29 +152,68 @@ const quest1Data: QuestData = {
           },
         },
         {
-          id: "adaptability",
-          name: "Adaptability",
-          score: 3.1,
+          id: "design-thinking",
+          name: "Design Thinking",
+          score: 4.7,
           description:
-            "Adjusting effectively to new conditions, challenges, and changing requirements.",
+            "Applying human-centered design processes to solve complex problems creatively.",
           sessionFeedback: {
             whatWentWell:
-              "Showed flexibility when plans changed and adapted approach accordingly.",
+              "Demonstrated strong empathy mapping and ideation skills during the design sprint.",
+            areasForImprovement:
+              "Continue refining prototyping speed and testing methodologies.",
+          },
+        },
+        {
+          id: "resilience-agility",
+          name: "Resilience & Agility",
+          score: 2.1,
+          description:
+            "Bouncing back from setbacks and adapting quickly to changing circumstances.",
+          sessionFeedback: {
+            whatWentWell:
+              "Showed willingness to try again after initial approach did not work.",
             areasForImprovement:
               "Build greater comfort with ambiguity and develop strategies for rapid pivoting.",
           },
         },
         {
-          id: "leadership",
-          name: "Leadership",
-          score: 2.9,
+          id: "empathy",
+          name: "Empathy",
+          score: 3.5,
           description:
-            "Guiding and inspiring others toward achieving shared goals.",
+            "Understanding and sharing the feelings and perspectives of others.",
           sessionFeedback: {
             whatWentWell:
-              "Took initiative in organizing team activities and setting direction.",
+              "Actively listened to team members and considered diverse viewpoints.",
             areasForImprovement:
-              "Develop stronger delegation skills and practice empowering team members.",
+              "Practice deeper perspective-taking in cross-functional collaboration.",
+          },
+        },
+        {
+          id: "entrepreneurial-mindset",
+          name: "Entrepreneurial Mindset",
+          score: 2.4,
+          description:
+            "Identifying opportunities, taking calculated risks, and driving innovation.",
+          sessionFeedback: {
+            whatWentWell:
+              "Showed interest in exploring new approaches to the problem.",
+            areasForImprovement:
+              "Develop stronger initiative in proposing novel solutions and validating ideas.",
+          },
+        },
+        {
+          id: "collaborative-problem-solving",
+          name: "Collaborative Problem Solving",
+          score: 3.0,
+          description:
+            "Working effectively with others to analyze problems and develop solutions together.",
+          sessionFeedback: {
+            whatWentWell:
+              "Contributed constructively to group discussions and built on others' ideas.",
+            areasForImprovement:
+              "Take more initiative in facilitating group problem-solving sessions.",
           },
         },
       ],
@@ -211,6 +242,10 @@ const quest1Data: QuestData = {
       title: "Model Choices",
       completedDate: "Completed July 2025",
       tags: ["LLM vs SLM", "Financial Engineering"],
+      sprintTitle: "Sprint Innovation",
+      subtitle: "LLM vs SLM",
+      problem: "LLM",
+      solution: "SLM",
     },
   ],
 };
@@ -765,6 +800,11 @@ export const mockData: UserData = {
   title: "Emily (TL A)'s Skill Passport",
   description:
     "Welcome to the skill overview. Here you can see how the participant has performed in developing their AI, Durable and Domain Skills compared to participants across the global Lumi Network.",
+  lumiInfoText: [
+    "At Lumi, we ignite potential by helping people build the skills that matter most \u2014 creative problem-solving, AI fluency, and entrepreneurial thinking.",
+    "This Skill Passport is a personalized snapshot of one participant journey through a real-world innovation challenge. It highlights how they performed, what they excelled at, and where they can grow \u2014 based on feedback, reflection, and facilitator insight.",
+    "It is more than a certificate \u2014 it is a window into how someone thinks, learns, and solves problems.",
+  ],
   quests: [
     { id: "quest-1", name: "Lumi-Test - Multi Emails Test (Oct 2025)" },
     { id: "quest-2", name: "Lumi-Test - Investments (Oct 2025)" },

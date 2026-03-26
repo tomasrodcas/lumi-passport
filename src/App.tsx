@@ -5,6 +5,7 @@ import RubricModal from "./components/RubricModal";
 import MainPage from "./pages/MainPage";
 import DrilldownPage from "./pages/DrilldownPage";
 import DetailPage from "./pages/DetailPage";
+import InnovationDetailPage from "./pages/InnovationDetailPage";
 import { QuestProvider } from "./context/QuestContext";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                 path="/skill/:categoryId/sub/:subSkillId"
                 element={<DetailPage />}
               />
+              <Route path="/innovation/:id" element={<InnovationDetailPage />} />
             </Routes>
           </main>
 

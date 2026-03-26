@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Innovation } from "../data/mockData";
 
 interface InnovationsSectionProps {
@@ -5,6 +6,8 @@ interface InnovationsSectionProps {
 }
 
 const InnovationsSection = ({ innovations }: InnovationsSectionProps) => {
+  const navigate = useNavigate();
+
   return (
     <section className="px-8 py-6">
       <h2 className="text-lg font-semibold text-gray-800 mb-4 italic">
@@ -17,7 +20,8 @@ const InnovationsSection = ({ innovations }: InnovationsSectionProps) => {
           {innovations.map((innovation) => (
             <div
               key={innovation.id}
-              className="bg-white rounded-xl shadow-sm overflow-hidden flex w-96"
+              className="bg-white rounded-xl shadow-sm overflow-hidden flex w-96 cursor-pointer hover:shadow-md transition-shadow"
+              onClick={() => navigate(`/innovation/${innovation.id}`)}
             >
               <div className="p-4 flex-1">
                 <h3 className="font-semibold text-gray-800 text-sm">
