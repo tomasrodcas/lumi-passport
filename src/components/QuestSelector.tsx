@@ -27,7 +27,7 @@ const QuestSelector = ({ selectedQuestId, onQuestChange }: QuestSelectorProps) =
   return (
     <div className="px-8 py-4 relative" ref={dropdownRef}>
       <button
-        className="text-teal-500 hover:text-teal-600 font-medium text-sm flex items-center gap-1 transition-colors"
+        className="text-indigo-500 hover:text-indigo-600 font-medium text-base flex items-center gap-1 transition-colors"
         onClick={() => setIsOpen(!isOpen)}
       >
         {selectedQuest?.name}
@@ -50,7 +50,7 @@ const QuestSelector = ({ selectedQuestId, onQuestChange }: QuestSelectorProps) =
           {mockData.quests.map((quest) => (
             <button
               key={quest.id}
-              className={`w-full text-left px-4 py-2 text-sm hover:bg-gray-50 flex items-center gap-2 ${
+              className={`w-full text-left px-4 py-2 text-base hover:bg-gray-50 flex items-center gap-2 ${
                 quest.id === selectedQuestId
                   ? "text-gray-900 font-medium"
                   : "text-gray-600"
@@ -61,7 +61,7 @@ const QuestSelector = ({ selectedQuestId, onQuestChange }: QuestSelectorProps) =
               }}
             >
               {quest.id === selectedQuestId && (
-                <svg className="w-4 h-4 text-teal-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-indigo-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               )}

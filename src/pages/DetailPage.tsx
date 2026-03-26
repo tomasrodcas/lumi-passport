@@ -244,7 +244,7 @@ const DetailPage = () => {
               <div className="mt-4 flex justify-end">
                 <button
                   onClick={handleNext}
-                  className="text-teal-500 text-xs font-medium flex items-center gap-1 hover:text-teal-600"
+                  className="text-indigo-500 text-xs font-medium flex items-center gap-1 hover:text-indigo-600"
                 >
                   Next
                   <svg

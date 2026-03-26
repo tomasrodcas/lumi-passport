@@ -42,7 +42,7 @@ const ScoreRing = ({ score, maxScore, size = 140 }: ScoreRingProps) => {
       <div className="absolute inset-0 flex items-center justify-center">
         <span className="text-4xl font-bold text-gray-800">{score}</span>
       </div>
-      <div className="absolute bottom-2 right-2 text-xs text-gray-400">
+      <div className="absolute bottom-1 right-1 text-base font-medium text-gray-400">
         /{maxScore}
       </div>
     </div>

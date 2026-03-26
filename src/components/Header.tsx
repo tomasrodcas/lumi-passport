@@ -13,7 +13,7 @@ const Header = ({ onInfoClick }: HeaderProps) => {
         <div className="flex items-center gap-6">
           <div className="text-3xl font-bold tracking-tight">
             <span className="text-white">Lumi</span>
-            <span className="text-teal-400 text-xs align-top ml-0.5">●</span>
+            <span className="text-indigo-400 text-xs align-top ml-0.5">●</span>
           </div>
           <div>
             <h1 className="text-xl font-semibold flex items-center gap-2">

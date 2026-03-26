@@ -16,8 +16,8 @@ const RubricModal = ({ onClose }: RubricModalProps) => {
       >
         {/* Tab bar */}
         <div className="px-6 pt-4">
-          <div className="inline-block border-b-2 border-teal-500 pb-2">
-            <span className="text-sm font-medium text-teal-600">Overview</span>
+          <div className="inline-block border-b-2 border-indigo-500 pb-2">
+            <span className="text-sm font-medium text-indigo-600">Overview</span>
           </div>
         </div>
 

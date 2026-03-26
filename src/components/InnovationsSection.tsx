@@ -34,7 +34,7 @@ const InnovationsSection = ({ innovations }: InnovationsSectionProps) => {
                   {innovation.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-teal-500 text-xs"
+                      className="text-indigo-500 text-xs"
                     >
                       {tag}
                     </span>

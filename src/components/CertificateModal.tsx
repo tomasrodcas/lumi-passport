@@ -37,7 +37,7 @@ const CertificateModal = ({ certification, onClose }: CertificateModalProps) => 
             <div className="h-8 w-px bg-gray-300" />
             <div className="text-xl font-bold text-[#1a1a2e]">
               Lumi
-              <span className="text-teal-400 text-[6px] align-top ml-0.5">●</span>
+              <span className="text-indigo-400 text-[6px] align-top ml-0.5">●</span>
             </div>
             <span className="text-[10px] text-gray-400 italic -ml-1">Igniting Futures</span>
           </div>
@@ -71,7 +71,7 @@ const CertificateModal = ({ certification, onClose }: CertificateModalProps) => 
             </div>
             {/* Rocket illustration */}
             <div className="text-right">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" className="text-teal-400 opacity-40">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" className="text-indigo-400 opacity-40">
                 <path d="M32 8 L40 24 L56 32 L40 40 L32 56 L24 40 L8 32 L24 24 Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 <circle cx="32" cy="32" r="4" stroke="currentColor" strokeWidth="1.5" />
                 <path d="M20 44 L8 56" stroke="currentColor" strokeWidth="1.5" />

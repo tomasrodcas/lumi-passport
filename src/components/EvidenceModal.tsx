@@ -22,7 +22,7 @@ const EvidenceModal = ({ onClose, title, imageUrl }: EvidenceModalProps) => {
         </button>
         <div className="p-1">
           <div className="bg-white rounded-lg overflow-hidden">
-            <div className="bg-teal-600 text-white text-sm font-semibold px-4 py-2">
+            <div className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2">
               {title}
             </div>
             <div className="p-4 flex items-center justify-center min-h-[300px]">
