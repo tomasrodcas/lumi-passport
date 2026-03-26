@@ -20,7 +20,7 @@ const MainPage = () => {
         selectedQuestId={selectedQuestId}
         onQuestChange={setSelectedQuestId}
       />
-      <div className="px-8 grid grid-cols-2 gap-6 mb-8">
+      <div className="px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
         {questData.skillCategories.map((category) => (
           <ScoreCard key={category.id} category={category} />
         ))}

@@ -11,7 +11,7 @@ const ScoreCard = ({ category }: ScoreCardProps) => {
 
   return (
     <div
-      className="bg-white rounded-xl shadow-sm p-8 cursor-pointer hover:shadow-md transition-shadow flex flex-col items-center"
+      className="bg-white rounded-xl shadow-sm p-6 sm:p-8 cursor-pointer hover:shadow-md transition-shadow flex flex-col items-center"
       onClick={() => navigate(`/skill/${category.id}`)}
     >
       <h3 className="text-sm font-medium text-gray-600 mb-4">

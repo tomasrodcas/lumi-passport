@@ -6,10 +6,10 @@ const LumiInfoBlock = () => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="bg-[#1a1a2e] text-white px-8 text-xs leading-relaxed">
+    <div className="bg-[#1a1a2e] text-white px-4 sm:px-8 text-xs leading-relaxed">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full flex items-center justify-end py-2 text-gray-400 hover:text-white transition-colors"
+        className="w-full flex items-center justify-end py-2 text-gray-400 hover:text-white transition-colors min-h-[44px]"
         aria-label={expanded ? "Collapse info" : "Expand info"}
       >
         {expanded ? (

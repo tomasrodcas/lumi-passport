@@ -9,18 +9,18 @@ const InnovationsSection = ({ innovations }: InnovationsSectionProps) => {
   const navigate = useNavigate();
 
   return (
-    <section className="px-8 py-6">
+    <section className="px-4 sm:px-8 py-6">
       <h2 className="text-lg font-semibold text-gray-800 mb-4 italic">
         Innovations
       </h2>
       {innovations.length === 0 ? (
         <p className="text-sm text-gray-400">No innovations for this quest.</p>
       ) : (
-        <div className="flex gap-4">
+        <div className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
           {innovations.map((innovation) => (
             <div
               key={innovation.id}
-              className="bg-white rounded-xl shadow-sm overflow-hidden flex w-96 cursor-pointer hover:shadow-md transition-shadow"
+              className="bg-white rounded-xl shadow-sm overflow-hidden flex w-72 sm:w-96 flex-shrink-0 cursor-pointer hover:shadow-md transition-shadow"
               onClick={() => navigate(`/innovation/${innovation.id}`)}
             >
               <div className="p-4 flex-1">

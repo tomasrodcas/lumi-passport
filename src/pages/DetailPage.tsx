@@ -100,11 +100,11 @@ const DetailPage = () => {
 
   return (
     <div>
-      <div className="p-8">
+      <div className="p-4 sm:p-8">
         <div className="flex justify-end mb-4">
           <button
             onClick={() => navigate(`/skill/${categoryId}`)}
-            className="flex items-center gap-1 text-gray-600 hover:text-gray-800 text-sm"
+            className="flex items-center gap-1 text-gray-600 hover:text-gray-800 text-sm min-h-[44px] min-w-[44px] justify-center"
           >
             <svg
               className="w-4 h-4"
@@ -123,7 +123,7 @@ const DetailPage = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Left column */}
           <div className="flex flex-col gap-4">
             <div className="bg-white rounded-xl shadow-sm p-6 flex items-center justify-between">

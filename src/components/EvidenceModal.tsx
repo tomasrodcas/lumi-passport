@@ -16,7 +16,7 @@ const EvidenceModal = ({ onClose, title, imageUrl }: EvidenceModalProps) => {
       >
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl font-bold w-8 h-8 flex items-center justify-center z-10"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl font-bold w-11 h-11 flex items-center justify-center z-10"
         >
           &times;
         </button>

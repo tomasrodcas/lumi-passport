@@ -18,7 +18,7 @@ const CertificateModal = ({ certification, onClose }: CertificateModalProps) => 
         onClick={(e) => e.stopPropagation()}
       >
         {/* Certificate content */}
-        <div className="p-10 relative overflow-hidden">
+        <div className="p-5 sm:p-10 relative overflow-hidden">
           {/* Decorative corner triangles */}
           <div className="absolute top-0 right-0 w-32 h-32">
             <div className="absolute top-0 right-0 w-0 h-0 border-t-[128px] border-t-[#2d2d6b] border-l-[128px] border-l-transparent" />
@@ -43,13 +43,13 @@ const CertificateModal = ({ certification, onClose }: CertificateModalProps) => 
           </div>
 
           {/* Certificate title */}
-          <h2 className="text-3xl font-serif font-bold text-gray-800 mb-2">
+          <h2 className="text-xl sm:text-3xl font-serif font-bold text-gray-800 mb-2">
             {detail.certTitle}
           </h2>
           <p className="text-sm text-gray-500 mb-4">This certificate is presented to</p>
 
           {/* Recipient */}
-          <h3 className="text-2xl font-bold text-gray-800 mb-2 underline decoration-1 underline-offset-4">
+          <h3 className="text-lg sm:text-2xl font-bold text-gray-800 mb-2 underline decoration-1 underline-offset-4">
             {certification.recipientName}
           </h3>
           <p className="text-xs text-gray-500 italic mb-8">
@@ -57,8 +57,8 @@ const CertificateModal = ({ certification, onClose }: CertificateModalProps) => 
           </p>
 
           {/* Signatories and rocket */}
-          <div className="flex items-end justify-between">
-            <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
+            <div className="flex gap-4 sm:gap-8 flex-wrap">
               {detail.signatories.map((sig) => (
                 <div key={sig.name} className="text-center">
                   <div className="text-lg italic text-gray-400 mb-1 font-serif">~</div>

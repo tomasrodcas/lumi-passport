@@ -16,11 +16,11 @@ const DrilldownPage = () => {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-8">
       <div className="flex justify-end mb-4">
         <button
           onClick={() => navigate("/")}
-          className="flex items-center gap-1 text-gray-600 hover:text-gray-800 text-sm"
+          className="flex items-center gap-1 text-gray-600 hover:text-gray-800 text-sm min-h-[44px] min-w-[44px] justify-center"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -28,8 +28,8 @@ const DrilldownPage = () => {
           Back
         </button>
       </div>
-      <div className="flex gap-8">
-        <div className="bg-white rounded-xl shadow-sm p-8 flex flex-col items-center">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+        <div className="bg-white rounded-xl shadow-sm p-6 sm:p-8 flex flex-col items-center">
           <h3 className="text-sm font-medium text-gray-600 mb-4">
             {category.name}
           </h3>

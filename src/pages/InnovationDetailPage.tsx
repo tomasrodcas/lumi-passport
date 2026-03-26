@@ -25,7 +25,7 @@ const InnovationDetailPage = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />
         {/* Text overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-8">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-8">
           <p className="text-xs text-gray-600 mb-1 font-medium tracking-wider uppercase">
             {innovation.sprintTitle || "Sprint Innovation"}
           </p>
@@ -48,14 +48,14 @@ const InnovationDetailPage = () => {
       </div>
 
       {/* Name heading */}
-      <div className="px-8 py-6">
-        <h2 className="text-xl font-bold text-gray-800">
+      <div className="px-4 sm:px-8 py-4 sm:py-6">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-800">
           Name: {innovation.title}
         </h2>
       </div>
 
       {/* Problem & Solution cards */}
-      <div className="px-8 grid grid-cols-2 gap-6 mb-8">
+      <div className="px-4 sm:px-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h3 className="font-bold text-gray-800 mb-2">The Problem</h3>
           <p className="text-gray-600 text-sm">{innovation.problem || "LLM"}</p>
@@ -67,7 +67,7 @@ const InnovationDetailPage = () => {
       </div>
 
       {/* Video embed placeholder */}
-      <div className="px-8 pb-8">
+      <div className="px-4 sm:px-8 pb-8">
         <div className="bg-gray-700 rounded-xl h-64 flex items-center justify-center">
           <div className="text-center text-gray-400">
             <div className="w-12 h-12 rounded-full border-2 border-gray-400 flex items-center justify-center mx-auto mb-2">

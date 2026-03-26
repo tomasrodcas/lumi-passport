@@ -8,18 +8,18 @@ interface HeaderProps {
 
 const Header = ({ onInfoClick }: HeaderProps) => {
   return (
-    <header className="bg-[#1a1a2e] text-white px-8 py-6">
+    <header className="bg-[#1a1a2e] text-white px-4 sm:px-8 py-4 sm:py-6">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <div className="text-3xl font-bold tracking-tight">
+        <div className="flex items-center gap-3 sm:gap-6 min-w-0">
+          <div className="text-2xl sm:text-3xl font-bold tracking-tight flex-shrink-0">
             <span className="text-white">Lumi</span>
             <span className="text-indigo-400 text-xs align-top ml-0.5">●</span>
           </div>
-          <div>
-            <h1 className="text-xl font-semibold flex items-center gap-2">
-              {mockData.title}
+          <div className="min-w-0">
+            <h1 className="text-base sm:text-xl font-semibold flex items-center gap-2">
+              <span className="truncate">{mockData.title}</span>
               <button
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-400 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center flex-shrink-0"
                 onClick={onInfoClick}
                 title="What the Scores Mean"
               >
@@ -39,17 +39,17 @@ const Header = ({ onInfoClick }: HeaderProps) => {
                 </svg>
               </button>
             </h1>
-            <p className="text-gray-400 text-xs max-w-2xl leading-relaxed mt-1">
+            <p className="text-gray-400 text-xs max-w-2xl leading-relaxed mt-1 hidden sm:block">
               {mockData.description}
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-3 text-gray-400">
+        <div className="flex items-center gap-1 sm:gap-3 text-gray-400 flex-shrink-0">
           <a
             href="https://www.linkedin.com/company/lumi-network"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
+            className="hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             title="LinkedIn"
           >
             <FaLinkedinIn className="w-5 h-5" />
@@ -58,19 +58,19 @@ const Header = ({ onInfoClick }: HeaderProps) => {
             href="https://www.instagram.com/lumi.network"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
+            className="hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             title="Instagram"
           >
             <FaInstagram className="w-5 h-5" />
           </a>
           <button
-            className="hover:text-white transition-colors"
+            className="hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             title="Share"
           >
             <Share2 className="w-5 h-5" />
           </button>
           <button
-            className="hover:text-white transition-colors"
+            className="hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={onInfoClick}
             title="Settings"
           >
