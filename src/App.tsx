@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import LumiInfoBlock from "./components/LumiInfoBlock";
 import RubricModal from "./components/RubricModal";
 import MainPage from "./pages/MainPage";
 import DrilldownPage from "./pages/DrilldownPage";
@@ -16,6 +17,7 @@ function App() {
       <QuestProvider>
         <div className="min-h-screen bg-[#f5f5f5]">
           <Header onInfoClick={() => setShowRubric(true)} />
+          <LumiInfoBlock />
           <main className="max-w-5xl mx-auto">
             <Routes>
               <Route path="/" element={<MainPage />} />

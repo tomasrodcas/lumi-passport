@@ -4,6 +4,8 @@ export interface SubSkill {
   score: number;
   description: string;
   sessionFeedback: {
+    session?: number;
+    feedbackScore?: number;
     whatWentWell: string;
     areasForImprovement: string;
   };
@@ -85,10 +87,12 @@ const quest1Data: QuestData = {
           description:
             "Getting the best of both human judgement and machine capability.",
           sessionFeedback: {
+            session: 6,
+            feedbackScore: 3,
             whatWentWell:
-              "Limited contribution during the session, resulting in insufficient evidence to assess this skill.",
+              "You asked insightful questions to clarify product scope. You identified essential specification elements clearly.",
             areasForImprovement:
-              "You could document any AI trial or feedback loops. You could connect AI contributions to practical tasks.",
+              "You could document any AI trial or feedback loops. You could connect AI attributions to practical tasks.",
           },
         },
         {

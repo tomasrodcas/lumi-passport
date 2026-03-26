@@ -14,8 +14,33 @@ import {
 } from "recharts";
 
 const evidenceItems = [
-  { id: "evidence-1", title: "Empathy Map" },
-  { id: "evidence-2", title: "Design Document" },
+  {
+    id: "evidence-1",
+    title: "Empathy Map",
+    color: "#3b82f6",
+    bgColor: "#dbeafe",
+    icon: "📊",
+    label: "Empathy Map",
+    sublabel: "User Research",
+  },
+  {
+    id: "evidence-2",
+    title: "Design Document",
+    color: "#8b5cf6",
+    bgColor: "#ede9fe",
+    icon: "📋",
+    label: "Design Doc",
+    sublabel: "Specifications",
+  },
+  {
+    id: "evidence-3",
+    title: "Session Recording",
+    color: "#059669",
+    bgColor: "#d1fae5",
+    icon: "🎥",
+    label: "Session Notes",
+    sublabel: "Observations",
+  },
 ];
 
 const DetailPage = () => {
@@ -50,18 +75,6 @@ const DetailPage = () => {
 
   return (
     <div>
-      {/* Lumi Info Text */}
-      <div className="bg-[#1a1a2e] text-white px-8 py-4 text-xs leading-relaxed">
-        {mockData.lumiInfoText.map((text, i) => (
-          <p key={i} className={i < mockData.lumiInfoText.length - 1 ? "mb-2" : ""}>
-            {text}
-          </p>
-        ))}
-        <p className="mt-2 italic text-gray-300">
-          Learn more at <span className="underline">www.lumi.network</span>
-        </p>
-      </div>
-
       <div className="p-8">
         <div className="flex justify-end mb-4">
           <button
@@ -110,35 +123,63 @@ const DetailPage = () => {
                 {evidenceItems.map((item) => (
                   <div
                     key={item.id}
-                    className="w-32 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center text-gray-300 cursor-pointer hover:shadow-md transition-shadow"
+                    className="w-32 h-24 rounded-lg shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
+                    style={{ backgroundColor: item.bgColor }}
                     onClick={() => setSelectedEvidence(item.title)}
                   >
-                    <svg
-                      className="w-8 h-8"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <div
+                      className="h-5 flex items-center px-2"
+                      style={{ backgroundColor: item.color }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
+                      <span className="text-white text-[9px] font-medium truncate">
+                        {item.label}
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center justify-center h-[calc(100%-1.25rem)] p-1">
+                      <span className="text-2xl mb-0.5">{item.icon}</span>
+                      <span
+                        className="text-[8px] font-medium"
+                        style={{ color: item.color }}
+                      >
+                        {item.sublabel}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="mt-2">
-              <p className="text-xs text-gray-400">(Test only)Supporting Evidence:</p>
-              <div className="flex justify-center mt-2">
-                <div className="text-teal-400">
-                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
+              <h4 className="font-medium text-gray-400 text-sm mb-3">
+                (Test only)Supporting Evidence:
+              </h4>
+              <div className="flex gap-3">
+                {evidenceItems.map((item) => (
+                  <div
+                    key={`test-${item.id}`}
+                    className="w-32 h-24 rounded-lg shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
+                    style={{ backgroundColor: item.bgColor }}
+                    onClick={() => setSelectedEvidence(item.title)}
+                  >
+                    <div
+                      className="h-5 flex items-center px-2"
+                      style={{ backgroundColor: item.color }}
+                    >
+                      <span className="text-white text-[9px] font-medium truncate">
+                        {item.label}
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center justify-center h-[calc(100%-1.25rem)] p-1">
+                      <span className="text-2xl mb-0.5">{item.icon}</span>
+                      <span
+                        className="text-[8px] font-medium"
+                        style={{ color: item.color }}
+                      >
+                        {item.sublabel}
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -179,12 +220,12 @@ const DetailPage = () => {
             </div>
 
             <div className="bg-white rounded-xl shadow-sm p-6">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-teal-500 text-xs font-medium">
-                  Session /
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-indigo-500 text-xs font-semibold">
+                  Session: {subSkill.sessionFeedback.session ?? 6}
                 </span>
-                <span className="text-teal-500 text-xs font-medium">
-                  Score /
+                <span className="text-indigo-500 text-xs font-semibold">
+                  Score: {subSkill.sessionFeedback.feedbackScore ?? 3}
                 </span>
               </div>
               <div className="mb-3">
