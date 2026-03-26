@@ -41,31 +41,26 @@ const EvidenceCard = ({
   onClick: () => void;
   keyPrefix: string;
 }) => {
-  const colors = evidenceColorMap[item.color];
   return (
     <div
       key={`${keyPrefix}-${item.id}`}
       className="w-32 h-24 rounded-lg shadow-sm overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
-      style={{ backgroundColor: colors.bg }}
       onClick={onClick}
     >
-      <div
-        className="h-5 flex items-center px-2"
-        style={{ backgroundColor: colors.fg }}
-      >
-        <span className="text-white text-[9px] font-medium truncate">
-          {item.title}
-        </span>
-      </div>
-      <div className="flex flex-col items-center justify-center h-[calc(100%-1.25rem)] p-1">
-        <span className="text-2xl mb-0.5">{evidenceIcon(item.type)}</span>
-        <span
-          className="text-[8px] font-medium"
-          style={{ color: colors.fg }}
+      {item.thumbnailUrl ? (
+        <img
+          src={item.thumbnailUrl}
+          alt={item.title}
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        <div
+          className="w-full h-full flex items-center justify-center"
+          style={{ backgroundColor: evidenceColorMap[item.color].bg }}
         >
-          {item.type === "video" ? "Video" : "Document"}
-        </span>
-      </div>
+          <span className="text-2xl">{evidenceIcon(item.type)}</span>
+        </div>
+      )}
     </div>
   );
 };
@@ -77,7 +72,7 @@ const DetailPage = () => {
   }>();
   const navigate = useNavigate();
   const { selectedQuestId } = useQuest();
-  const [selectedEvidence, setSelectedEvidence] = useState<string | null>(null);
+  const [selectedEvidence, setSelectedEvidence] = useState<{ title: string; imageUrl?: string } | null>(null);
   const [currentSessionIndex, setCurrentSessionIndex] = useState<number | null>(null);
 
   const questData = mockData.questData[selectedQuestId];
@@ -154,7 +149,7 @@ const DetailPage = () => {
                   <EvidenceCard
                     key={item.id}
                     item={item}
-                    onClick={() => setSelectedEvidence(item.title)}
+                    onClick={() => setSelectedEvidence({ title: item.title, imageUrl: item.thumbnailUrl })}
                     keyPrefix="main"
                   />
                 ))}
@@ -170,7 +165,7 @@ const DetailPage = () => {
                   <EvidenceCard
                     key={`test-${item.id}`}
                     item={item}
-                    onClick={() => setSelectedEvidence(item.title)}
+                    onClick={() => setSelectedEvidence({ title: item.title, imageUrl: item.thumbnailUrl })}
                     keyPrefix="test"
                   />
                 ))}
@@ -274,7 +269,8 @@ const DetailPage = () => {
 
       {selectedEvidence && (
         <EvidenceModal
-          title={selectedEvidence}
+          title={selectedEvidence.title}
+          imageUrl={selectedEvidence.imageUrl}
           onClose={() => setSelectedEvidence(null)}
         />
       )}

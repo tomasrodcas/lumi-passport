@@ -84,12 +84,12 @@ export interface UserData {
 }
 
 const defaultEvidence: EvidenceItem[] = [
-  { id: "ev-1", title: "Empathy Map", type: "document", color: "green" },
-  { id: "ev-2", title: "Design Doc", type: "document", color: "purple" },
-  { id: "ev-3", title: "Session Notes", type: "document", color: "green" },
-  { id: "ev-4", title: "User Research", type: "document", color: "blue" },
-  { id: "ev-5", title: "Specifications", type: "document", color: "purple" },
-  { id: "ev-6", title: "Observations", type: "video", color: "blue" },
+  { id: "ev-1", title: "Empathy Map", type: "document", color: "green", thumbnailUrl: "/images/evidence-existing-solutions.png" },
+  { id: "ev-2", title: "Design Doc", type: "document", color: "purple", thumbnailUrl: "/images/evidence-user-testing.png" },
+  { id: "ev-3", title: "Session Notes", type: "document", color: "green", thumbnailUrl: "/images/evidence-existing-solutions.png" },
+  { id: "ev-4", title: "User Research", type: "document", color: "blue", thumbnailUrl: "/images/evidence-user-testing.png" },
+  { id: "ev-5", title: "Specifications", type: "document", color: "purple", thumbnailUrl: "/images/evidence-existing-solutions.png" },
+  { id: "ev-6", title: "Observations", type: "video", color: "blue", thumbnailUrl: "/images/evidence-user-testing.png" },
 ];
 
 const quest1Data: QuestData = {

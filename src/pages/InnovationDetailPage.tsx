@@ -17,27 +17,13 @@ const InnovationDetailPage = () => {
   return (
     <div>
       {/* Hero banner with mountain image placeholder */}
-      <div className="relative h-64 bg-gradient-to-r from-gray-200 to-gray-300 overflow-hidden">
-        {/* Mountain illustration placeholder */}
-        <div className="absolute inset-0 flex items-end">
-          <svg viewBox="0 0 1200 300" className="w-full" preserveAspectRatio="xMidYMax slice">
-            <defs>
-              <linearGradient id="mountain1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#e5e7eb" />
-                <stop offset="100%" stopColor="#d1d5db" />
-              </linearGradient>
-              <linearGradient id="mountain2" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#f3f4f6" />
-                <stop offset="100%" stopColor="#e5e7eb" />
-              </linearGradient>
-            </defs>
-            <polygon points="0,300 200,80 400,200 500,100 700,180 900,50 1100,150 1200,120 1200,300" fill="url(#mountain1)" />
-            <polygon points="0,300 100,180 300,120 500,200 600,140 800,190 1000,90 1200,170 1200,300" fill="url(#mountain2)" opacity="0.7" />
-            {/* Snow caps */}
-            <polygon points="880,50 900,50 920,70 880,70" fill="white" opacity="0.8" />
-            <polygon points="490,100 510,100 520,115 480,115" fill="white" opacity="0.8" />
-          </svg>
-        </div>
+      <div className="relative h-64 overflow-hidden">
+        <img
+          src="/images/innovation-mountain.jpg"
+          alt={innovation.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent" />
         {/* Text overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <p className="text-xs text-gray-600 mb-1 font-medium tracking-wider uppercase">
