@@ -1,12 +1,15 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { mockData } from "../data/mockData";
+import { useQuest } from "../context/QuestContext";
 import ScoreRing from "../components/ScoreRing";
 
 const DrilldownPage = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const navigate = useNavigate();
+  const { selectedQuestId } = useQuest();
 
-  const category = mockData.skillCategories.find((c) => c.id === categoryId);
+  const questData = mockData.questData[selectedQuestId];
+  const category = questData.skillCategories.find((c) => c.id === categoryId);
 
   if (!category) {
     return <div className="p-8">Category not found</div>;

@@ -1,6 +1,10 @@
 import { mockData } from "../data/mockData";
 
-const Header = () => {
+interface HeaderProps {
+  onInfoClick: () => void;
+}
+
+const Header = ({ onInfoClick }: HeaderProps) => {
   return (
     <header className="bg-[#1a1a2e] text-white px-8 py-6">
       <div className="flex items-center justify-between">
@@ -12,7 +16,16 @@ const Header = () => {
           <div>
             <h1 className="text-xl font-semibold flex items-center gap-2">
               {mockData.title}
-              <span className="text-gray-400 text-sm">☉</span>
+              <button
+                className="text-gray-400 hover:text-white transition-colors"
+                onClick={onInfoClick}
+                title="What the Scores Mean"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth={2} />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16v-4m0-4h.01" />
+                </svg>
+              </button>
             </h1>
             <p className="text-gray-400 text-xs max-w-2xl leading-relaxed mt-1">
               {mockData.description}
